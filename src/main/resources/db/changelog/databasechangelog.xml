@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="evolution/settings-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/request_content-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/request_content-changelog-01.xml" relativeToChangelogFile="true" />
+    <include file="evolution/verified_person-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/account_info-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/credit_bureau-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/person-changelog-00.xml" relativeToChangelogFile="true" />
+    <include file="evolution/request-changelog-00.xml" relativeToChangelogFile="true" />
+
+</databaseChangeLog>

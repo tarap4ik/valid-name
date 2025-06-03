@@ -1,0 +1,74 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="3-1"
+               author="usr">
+        <createTable tableName="account_info">
+            <column name="account_number"
+                    type="DECIMAL">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="pk_account_info"/>
+            </column>
+            <column name="account_status"
+                    type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="current_balance"
+                    type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_opened"
+                    type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="days_in_arrears"
+                    type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delinquency_code"
+                    type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="highest_days_in_arrears"
+                    type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_your_account"
+                    type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_payment_amount"
+                    type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_payment_date"
+                    type="DATE"/>
+            <column name="loaded_at"
+                    type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="original_amount"
+                    type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="overdue_balance"
+                    type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="overdue_date"
+                    type="DATE"/>
+            <column name="product_type_id"
+                    type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="credit_bureau_id"
+                    type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
