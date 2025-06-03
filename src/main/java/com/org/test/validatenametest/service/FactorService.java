@@ -63,7 +63,6 @@ public class FactorService {
     private double getDistanceRatio() {
         var settings = settingsRepository.findByName("distance_ratio_threshold");
         if (settings.isEmpty()) {
-            log.error("Настройка distance_ratio_threshold не найдена");
             throw new NotFoundSettingException("distance_ratio_threshold");
         }
         return Double.parseDouble(settings.get().getValue());

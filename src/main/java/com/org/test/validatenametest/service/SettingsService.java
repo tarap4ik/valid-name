@@ -35,7 +35,7 @@ public class SettingsService {
     public long createSettings(SettingsDTO settingsDTO) {
         var settings = settingsRepository.findByName(settingsDTO.name());
         if (settings.isPresent()) {
-            log.info("Settings already exists");
+            log.info("Такая настройка уже есть");
         }
         var result = settingsRepository.save(SettingsMapper.INSTANCE.toSettingsEntity(settingsDTO));
         return result.getSettingId();
