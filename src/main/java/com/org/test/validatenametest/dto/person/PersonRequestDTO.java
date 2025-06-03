@@ -16,6 +16,6 @@ public class PersonRequestDTO implements Serializable {
 
     PersonDTO person;
 
-    VerifyPersonDTO verifyPerson;
+    VerifiedPersonDTO verifyPerson;
 
 }
