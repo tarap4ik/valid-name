@@ -35,14 +35,14 @@ public class RequestContentService {
         return content.getContent();
     }
 
-    public long createContent(String content) {
+    public Long createContent(String content) {
         RequestContentEntity requestContentEntity = new RequestContentEntity();
         requestContentEntity.setContent(content);
         var result = requestContentRepository.save(requestContentEntity);
         return result.getRequestId();
     }
 
-    public void updateContentById(long id, String content) {
+    public void updateContentById(Long id, String content) {
         var result = requestContentRepository.findById(id).orElseThrow(NotFoundSettingException::new);
         result.setContent(content);
     }
