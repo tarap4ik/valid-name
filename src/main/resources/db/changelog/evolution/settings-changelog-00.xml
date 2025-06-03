@@ -21,7 +21,7 @@
             </column>
         </createTable>
         <insert tableName="settings">
-            <column name="setting_id" value="1"/>
+<!--            <column name="setting_id" value="1"/>-->
             <column name="name" value="distance_ratio_threshold"/>
             <column name="value" value="0.9"/>
         </insert>
