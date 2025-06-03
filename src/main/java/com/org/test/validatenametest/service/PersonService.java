@@ -1,8 +1,8 @@
 package com.org.test.validatenametest.service;
 
-import com.org.test.validatenametest.dto.person.PersonDTO;
 import com.org.test.validatenametest.dto.person.PersonRequestDTO;
-import com.org.test.validatenametest.dto.person.VerifyPersonDTO;
+import com.org.test.validatenametest.mapper.PersonMapper;
+import com.org.test.validatenametest.mapper.VerifiedPersonMapper;
 import com.org.test.validatenametest.repository.requests.RequestRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,8 @@ public class PersonService {
         var requests = requestRepository.findAll();
         return requests.stream().map(
                 requestEntity -> {
-                    var person = new PersonDTO(requestEntity.getPerson().getFirstName(),
-                            requestEntity.getPerson().getLastName(),
-                            requestEntity.getPerson().getMiddleName());
-                    var verifyPerson = new VerifyPersonDTO(requestEntity.getCreditBureau().getVerifiedPerson().getFirstName(),
-                            requestEntity.getCreditBureau().getVerifiedPerson().getSurname(),
-                            requestEntity.getCreditBureau().getVerifiedPerson().getOtherName());
+                    var person = PersonMapper.INSTANCE.toPersonDTO(requestEntity.getPerson());
+                    var verifyPerson = VerifiedPersonMapper.INSTANCE.toVerifyPersonDTO(requestEntity.getCreditBureau().getVerifiedPerson());
                     return new PersonRequestDTO(requestEntity.getRequestId(), person, verifyPerson);
                 }
         ).toList();
