@@ -14,7 +14,7 @@ public class Combined {
     public String[] setPairs(String first, String second, String third) {
         return Stream.of(first, second, third)
                 .filter(Objects::nonNull)
-                .flatMap(s -> Arrays.stream(s.toLowerCase().split(" ")))
+                .flatMap(s -> Arrays.stream(s.trim().toLowerCase().split(" ")))
                 .toArray(String[]::new);
     }
 
